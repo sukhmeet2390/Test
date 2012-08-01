@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class Player {
     ArrayList<Card> cards;
-
-    public Player() {
+    private Dealer dealer;
+    public Player(Dealer dealer) {
+        this.dealer = dealer;
         this.cards = new ArrayList<Card>();
     }
 
@@ -26,7 +27,7 @@ public class Player {
     }
 
     public void deal() {
-        Card card = Dealer.deal();
+        Card card = dealer.deal();
         cards.add(card);
         if (isBust()) throw new PlayerBustException();
     }
