@@ -1,2 +1,2 @@
 blah
-bo
+b
